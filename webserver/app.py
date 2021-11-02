@@ -21,4 +21,4 @@ def keep_alive():
     return str(parsed_json)
 
 
-app.run(host="172.20.10.5", port=5000)
+app.run(host="192.168.1.8", port=5000)

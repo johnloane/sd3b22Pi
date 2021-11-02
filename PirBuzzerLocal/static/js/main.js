@@ -50,10 +50,24 @@ function handleClick(cb){
 	{
 		value = "OFF";
 	}
-	sendEvent(cb.id + "-" + value)
+	sendEvent(cb.id + "-" + value);
 }
 
-
+function sendEvent(value)
+{
+	console.log("Send Event called");
+	var request = new XMLHttpRequest();
+	request.onreadystatechange = function(){
+		if(this.readystate === 4){
+			if(this.status === 200){
+				if(this.responseText !== null){
+				}
+			}
+		}
+	};
+	request.open("POST", "status="+value, true);
+	request.send(null);
+}
 
 
 
